@@ -12,6 +12,7 @@ last_line = last_line.split(',')
 confirmed = int(last_line[5])
 deceased = int(last_line[6])
 recovered = int(last_line[7])
+tested = int(last_line[9])
 
 template_filename = "./template.html"
 rendered_filename = "index.html"
@@ -19,7 +20,8 @@ render_vars = {
     "confirmed": confirmed,
     "deceased": deceased,
     "recovered": recovered,
-    "active": confirmed - deceased - recovered
+    "active": confirmed - deceased - recovered,
+    "tested": tested
 }
 
 script_path = os.path.dirname(os.path.abspath(__file__))
