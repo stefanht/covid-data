@@ -13,6 +13,8 @@ tests = 0
 for k,v in data.items():
     if 'mobility' in v: 
         del v['mobility']
+    if 'defaced_mobility' in v: 
+        del v['defaced_mobility']
     if 'source' in v: 
         del v['source']
     tests = tests + v['analyzed']
