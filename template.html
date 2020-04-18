@@ -91,10 +91,10 @@
           <strong class="text-big">{{active}}</strong>
           <div class="row">
             <div class="col">
-              <small>{{active_daily}}</small>
+              <small>{{ '%+d' % active_daily}}</small>
             </div>
             <div class="col">
-              <small>{{active_perc}}%</small>
+              <small>{{ '%+.2f' % active_perc}}%</small>
             </div>
           </div>
         </div>
