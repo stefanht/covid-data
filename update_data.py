@@ -20,9 +20,12 @@ for k,v in data.items():
     tests = tests + v['analyzed']
     v.update({'tests':tests})
 
+    active = v['confirmed'] - v['deceased'] - v['recovered']
+    v.update({'active': active})
+
 
 with open('output', 'w') as f:
-    f.write('Fecha,Analizados,Positivos,Importados,Relacionados,Confirmados,Fallecidos,Recuperados,Hospitalizados,Tests')
+    f.write('Fecha,Analizados,Positivos,Importados,Relacionados,Confirmados,Fallecidos,Recuperados,Hospitalizados,Tests,Activos')
     f.write('\n')
     for k,v in data.items():
         #print('"'+k+'"', end='')
