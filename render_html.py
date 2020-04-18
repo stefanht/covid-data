@@ -58,4 +58,4 @@ output_text = environment.get_template(template_filename).render(render_vars)
 with open(rendered_file_path, "w") as result_file:
     result_file.write(output_text) 
 
-#call('surge .', shell = True)
+call('surge .', shell = True)
