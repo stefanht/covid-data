@@ -27,45 +27,76 @@
     <div class="col mb-3">
       <div class="card text-center text-white bg-info">
         <div class="card-body">
-          <strong class="text-big">{{tested}}</strong>
+          Tests
           <br>
-          <small>Tests</small>
+          <strong class="text-big">{{tested}}</strong>
+          <div class="row">
+            <div class="col">
+              <small>{{test_popu}}% / pobl.</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="col mb-3">
       <div class="card text-center text-white bg-primary">
         <div class="card-body">
-          <strong class="text-big">{{confirmed}}</strong>
+          Confirmados
           <br>
-          <small>Confirmados</small>
+          <strong class="text-big">{{confirmed}}</strong>
+          <div class="row">
+            <div class="col">
+              <small>+{{positive}}</small>
+            </div>
+            <div class="col">
+              <small>+{{positive_inc}}%</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="col mb-3">
       <div class="card text-center text-white bg-danger">
         <div class="card-body">
-          <strong class="text-big">{{deceased}}</strong>
+          Fallecidos
           <br>
-          <small>Fallecidos</small>
+          <strong class="text-big">{{deceased}}</strong>
+          <div class="row">
+            <div class="col">
+              <small>{{death_perc}}% / casos</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="col mb-3">
       <div class="card text-center text-white bg-success">
         <div class="card-body">
-          <strong class="text-big">{{recovered}}</strong>
+          Recuperados
           <br>
-          <small>Recuperados</small>
+          <strong class="text-big">{{recovered}}</strong>
+          <div class="row">
+            <div class="col">
+              <small>{{recovered_perc}}% / casos</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="col mb-3">
       <div class="card text-center text-white bg-warning">
         <div class="card-body">
-          <strong class="text-big">{{active}}</strong>
+          Activos
           <br>
-          <small>Activos</small>
+          <strong class="text-big">{{active}}</strong>
+          <div class="row">
+            <div class="col">
+              <small>{{active_daily}}</small>
+            </div>
+            <div class="col">
+              <small>{{active_perc}}%</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
