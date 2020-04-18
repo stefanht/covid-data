@@ -10,6 +10,7 @@ data = r.json(object_pairs_hook=OrderedDict)
 
 data = data['data']['data']
 tests = 0
+b4_deaths = 0
 for k,v in data.items():
     if 'mobility' in v: 
         del v['mobility']
@@ -23,9 +24,13 @@ for k,v in data.items():
     active = v['confirmed'] - v['deaths'] - v['recovered']
     v.update({'active': active})
 
+    daily_deaths = v['deaths'] - b4_deaths
+    b4_deaths = v['deaths']
+    v.update({'daily_deaths': daily_deaths})
+
 
 with open('output', 'w') as f:
-    f.write('Fecha,Analizados,Positivos,Importados,Relacionados,Confirmados,Fallecidos,Recuperados,Hospitalizados,Tests,Activos')
+    f.write('Fecha,Analizados,Positivos,Importados,Relacionados,Confirmados,Fallecidos,Recuperados,Hospitalizados,Tests,Activos,Fallecidos Diarios')
     f.write('\n')
     for k,v in data.items():
         #print('"'+k+'"', end='')
