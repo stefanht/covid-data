@@ -20,7 +20,7 @@ for k,v in data.items():
     tests = tests + v['analyzed']
     v.update({'tests':tests})
 
-    active = v['confirmed'] - v['deceased'] - v['recovered']
+    active = v['confirmed'] - v['deaths'] - v['recovered']
     v.update({'active': active})
 
 
