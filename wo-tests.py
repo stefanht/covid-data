@@ -17,22 +17,19 @@ for i in range(len(search)):
     if search[i].get_text() in country:
         start.append(i)
 
-countries = []
-data = []
+#countries = []
+data = {}
 
 for c in start:
-    try:
-        # 11 es test/1Mpop
-        countries.append(search[c].get_text())
-        data = data + [search[c+11].get_text().replace(',', '')]
-    except:
-        countries = countries + ["0"]
-        data = data + ["0"]
+    # 11 es test/1Mpop
+    data[search[c].get_text()] = int(search[c+11].get_text().replace(',', ''))
+
+sorted_data = sorted(data.items(), key=lambda x: x[1], reverse=True)    
 
 with open("wo-tests.json", "w") as f:
     f.write('[')
-    for i in range(len(countries)):
-        f.write('{"country":"'+countries[i] + '","tests":' + data[i] + '}')
-        if i+1 != len(countries):
+    for i in range(len(sorted_data)):
+        f.write('{"country":"'+sorted_data[i][0] + '","tests":' + str(sorted_data[i][1]) + '}')
+        if i+1 != len(sorted_data):
             f.write(',')
     f.write(']')
