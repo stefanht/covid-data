@@ -17,7 +17,6 @@ for i in range(len(search)):
     if search[i].get_text() in country:
         start.append(i)
 
-#countries = []
 data = {}
 
 for c in start:
