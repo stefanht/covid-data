@@ -7,6 +7,8 @@ url = 'https://tivahq.com/covid19/py/data'
 r = requests.get(url)
 data = r.text
 
+data.replace('test:', '"test":')
+
 with open('data.json', 'w') as f:
     f.write(data)
 
