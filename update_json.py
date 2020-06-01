@@ -7,11 +7,10 @@ url = 'https://tivahq.com/covid19/py/data'
 r = requests.get(url)
 data = r.text
 
-data.replace('test:', '"test":')
+data = data.replace('test:', '"test":')
 
 with open('data.json', 'w') as f:
     f.write(data)
-
 
 ### WO ###
 country = ["Paraguay", "USA", "Slovenia", "Italy", "S. Korea", "Germany", "Brazil", "Ecuador", "Argentina", "Uruguay", "Chile"]
