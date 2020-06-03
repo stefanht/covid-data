@@ -32,8 +32,8 @@ for i in range(len(search)):
 data = {}
 
 for c in start:
-    # 11 es test/1Mpop
-    data[search[c].get_text()] = int(search[c+11].get_text().replace(',', ''))
+    # 12 es test/1Mpop
+    data[search[c].get_text()] = int(search[c+12].get_text().replace(',', ''))
 
 sorted_data = sorted(data.items(), key=lambda x: x[1], reverse=True)    
 
